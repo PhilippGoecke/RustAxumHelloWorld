@@ -99,7 +99,7 @@ WORKDIR /srv/app
 # Copy compiled binary from the builder
 COPY --from=builder --chown=$USER:$USER /app/hello_world/target/release/hello_world /usr/local/bin/hello_world
 
-EXPOSE 5150
+EXPOSE 5000
 
 ENV BIND_ADDR=0.0.0.0:5000
 
