@@ -101,6 +101,6 @@ COPY --from=builder --chown=$USER:$USER /app/hello_world/target/release/hello_wo
 
 EXPOSE 5150
 
-ENV BIND_ADDR=0.0.0.0:5150
+ENV BIND_ADDR=0.0.0.0:5000
 
 CMD ["hello_world"]
