@@ -69,7 +69,7 @@ async fn index(Query(params): Query<HelloParams>) -> impl IntoResponse {
 #[tokio::main]
 async fn main() {
     let app = Router::new().route("/", get(index));
-    let bind = std::env::var("BIND_ADDR").unwrap_or_else(|_| "0.0.0.0:5150".to_string());
+    let bind = std::env::var("BIND_ADDR").unwrap_or_else(|_| "0.0.0.0:5000".to_string());
     let listener = tokio::net::TcpListener::bind(&bind).await.unwrap();
     axum::serve(listener, app).await.unwrap();
 }
